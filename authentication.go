@@ -1,8 +1,12 @@
 package authentication
 
-import "github.com/myfantasy/mft"
+import (
+	"context"
 
-type Authentication interface {
+	"github.com/myfantasy/mft"
+)
+
+type AuthenticationChecker interface {
 	Type() string
-	Check(userNameRequest string, secretInfo []byte) (ok bool, userName string, err *mft.Error)
+	Check(ctx context.Context, userNameRequest string, secretInfo []byte) (ok bool, userName string, err *mft.Error)
 }
