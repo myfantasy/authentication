@@ -107,7 +107,7 @@ func (sac *SimpleAuthenticationChecker) Check(
 	if sac == nil {
 		return true, userName, nil
 	}
-	if sac.DataRLock(ctx) {
+	if !sac.DataRLock(ctx) {
 		return false, userName, mft.GenerateError(20310100)
 	}
 	defer sac.DataRUnlock()
