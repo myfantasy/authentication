@@ -18,6 +18,16 @@ type Request struct {
 	Pwd string `json:"pwd"`
 }
 
+func (r *Request) ToSecretInfo() json.RawMessage {
+	b, er0 := json.Marshal(r)
+
+	if er0 != nil {
+		panic(mft.GenerateErrorE(20310200, er0))
+	}
+
+	return b
+}
+
 type User struct {
 	Name       string `json:"name"`
 	Pwd        string `json:"pwd"`

@@ -10,6 +10,8 @@ var Errors map[int]string = map[int]string{
 	20310100: "authentication.sat.SimpleAuthenticationChecker.Check: DataRLock fail",
 	20310110: "authentication.sat.User.Check: fail to unmarshal secret_info",
 	20310111: "authentication.sat.User.Check: fail to make hash",
+
+	20310200: "authentication.sat.Request.ToSecretInfo: fail marchal",
 }
 
 func init() {
