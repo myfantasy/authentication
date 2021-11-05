@@ -18,6 +18,10 @@ type Request struct {
 	Pwd string `json:"pwd"`
 }
 
+func (r *Request) Type() string {
+	return TypeAT
+}
+
 func (r *Request) ToSecretInfo() json.RawMessage {
 	b, er0 := json.Marshal(r)
 
@@ -77,27 +81,43 @@ var _ storage.Storable = &SimpleAuthenticationChecker{}
 //var _ ajt.Api = &SimpleAuthenticationChecker{}
 
 type SimpleAuthenticationChecker struct {
-	storage.SaveObjectProto
+	storage.SaveProto
 
 	Users map[string]User `json:"users,omitempty"`
 }
 
-func (spc *SimpleAuthenticationChecker) ToBytes() (data []byte, err *mft.Error) {
-	b, er0 := json.Marshal(spc)
+func (sac *SimpleAuthenticationChecker) ToBytes() (data []byte, err *mft.Error) {
+	b, er0 := json.Marshal(sac)
 	if er0 != nil {
-		return nil, mft.GenerateErrorE(10510000, er0)
+		return nil, mft.GenerateErrorE(20310000, er0)
 	}
 	return b, nil
 }
-func (spc *SimpleAuthenticationChecker) FromBytes(data []byte) (err *mft.Error) {
-	er0 := json.Unmarshal(data, &spc)
+func (sac *SimpleAuthenticationChecker) FromBytes(data []byte) (err *mft.Error) {
+	er0 := json.Unmarshal(data, &sac)
 	if er0 != nil {
-		return mft.GenerateErrorE(10510000, er0)
+		return mft.GenerateErrorE(20310010, er0)
 	}
 	return nil
 }
+func (sac *SimpleAuthenticationChecker) Save() (err *mft.Error) {
+	err = storage.SaveObject(sac)
+	if err != nil {
+		return mft.GenerateErrorE(20310020, err)
+	}
 
-func (spc *SimpleAuthenticationChecker) Type() string {
+	return nil
+}
+func (sac *SimpleAuthenticationChecker) Load() (err *mft.Error) {
+	err = storage.LoadObject(sac)
+	if err != nil {
+		return mft.GenerateErrorE(20310030, err)
+	}
+
+	return nil
+}
+
+func (sac *SimpleAuthenticationChecker) Type() string {
 	return TypeAT
 }
 
