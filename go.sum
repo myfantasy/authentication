@@ -4,5 +4,5 @@ github.com/myfantasy/mfs v0.2.0 h1:2+URBmhKwB0To042cINHMLwWpXKfMt3cHjlD38O69wg=
 github.com/myfantasy/mfs v0.2.0/go.mod h1:VzrpsffCc+o2mGUMJrO07YSbHrGfZ4PbbENQbNssecA=
 github.com/myfantasy/mft v0.2.3 h1:pgxLaVEzQ7jg1XTcOqb3brwALEKarzKS+r1oVdHeGVk=
 github.com/myfantasy/mft v0.2.3/go.mod h1:iwW0O0iRBbYyuuuRsuKABMhKSqmRg/Cpw4wZhw5ZJmQ=
-github.com/myfantasy/storage v0.0.8 h1:+eG0nx6LF3T/AuZW9u17NkN/9s5uzakNnqKKKUrukFg=
-github.com/myfantasy/storage v0.0.8/go.mod h1:Ryjavez5/ZdYevI94nR7lLq2RZPDyNssmpMhewY8kUY=
+github.com/myfantasy/storage v0.0.9 h1:JuD1ei9M9uziPExB/yAjaNbXW/hXNYTQn4xV73sr3p4=
+github.com/myfantasy/storage v0.0.9/go.mod h1:Ryjavez5/ZdYevI94nR7lLq2RZPDyNssmpMhewY8kUY=

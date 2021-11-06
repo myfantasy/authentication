@@ -34,9 +34,9 @@ func (r *Request) ToSecretInfo() json.RawMessage {
 
 type User struct {
 	Name       string `json:"name"`
-	Pwd        string `json:"pwd"`
-	PwdIsEnc   bool   `json:"pwd_is_enc"`
-	IsDisabled bool   `json:"is_disabled"`
+	Pwd        string `json:"pwd,omitempty"`
+	PwdIsEnc   bool   `json:"pwd_is_enc,omitempty"`
+	IsDisabled bool   `json:"is_disabled,omitempty"`
 }
 
 func (u *User) Check(secretInfo []byte,

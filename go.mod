@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/myfantasy/mft v0.2.3
-	github.com/myfantasy/storage v0.0.8
+	github.com/myfantasy/storage v0.0.9
 )
 
 require (
