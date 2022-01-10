@@ -87,7 +87,7 @@ type SimpleAuthenticationChecker struct {
 }
 
 func (sac *SimpleAuthenticationChecker) ToBytes() (data []byte, err *mft.Error) {
-	b, er0 := json.Marshal(sac)
+	b, er0 := json.MarshalIndent(sac, "", "  ")
 	if er0 != nil {
 		return nil, mft.GenerateErrorE(20310000, er0)
 	}
